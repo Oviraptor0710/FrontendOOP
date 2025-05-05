@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Đăng nhập tài khoản</title>
+    <link rel = "stylesheet" href = "login.css" />
+  </head>
+  <!--Body-->
+  <body>
+    <header>
+      <h1>Welcome to our mall!!</h1>
+    </header>
+    <div>
+    <h1 id = "dang_nhap" class = "top">
+      Đăng nhập
+    </h1>
+    <br/>
+
+    <form>
+      <input
+       type = "text"
+       id = "tai_khoan"
+       class = "login_form" 
+       size = "40"
+       placeholder = "Nhập email, tên đăng nhập, số điện thoại"
+       required
+      />
+    <br/>
+      <input
+       type = "password"
+       id = "mat_khau"
+       class = "login_form"
+       size = "40"
+       placeholder = "Nhập mật khẩu"
+       required
+      />
+    </form>
+    <br/>
+    <p class = "top"><button id = "dangnhap_button">Đăng nhập</button></p>
+    <p class="top">
+      Bạn chưa có tài khoản
+      <button type="button" id="dangky_button" onclick="window.location.href ='register.html'">Đăng ký</button>
+    </p>
+    </div>
+  </body>
+</html>

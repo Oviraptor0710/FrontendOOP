@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Đăng ký tài khoản</title>
+    <link rel = "stylesheet" href = "register.css" />
+  </head>
+  <!--Body-->
+  <body>
+    <header>
+      <h1>Welcome to our mall!!</h1>
+    </header>
+    <div>
+    <h1 id = "dang_ky" class = "top">
+      Đăng ký
+    </h1>
+    <br/>
+
+    <form>
+      <input
+       type = "text"
+       id = "ten_dang_nhap"
+       class = "signup_form" 
+       size = "40"
+       placeholder = "Nhập tên đăng nhập"
+       required
+      />
+    </form>
+    <br/>
+
+    <form>
+      <input
+       type = "email"
+       id = "email"
+       class = "signup_form" 
+       size = "40"
+       placeholder = "Nhập email"
+       required
+      />
+    </form>
+    <br/>
+
+    <form>
+      <input
+       type = "text"
+       id = "so_dien_thoai"
+       class = "signup_form" 
+       pattern = "/d{10}"
+       maxlength = "10"
+       size = "40"
+       placeholder = "Nhập số điện thoại"
+       required
+      />
+    </form>
+    <br/>
+
+    <form>
+      <input
+       type = "password"
+       id = "mat_khau"
+       class = "signup_form"
+       size = "40"
+       placeholder = "Nhập mật khẩu"
+       required
+      />
+    </form>
+      <br/>
+      <form>
+      <input
+       type = "password"
+       id = "xac_nhan_mat_khau"
+       class = "signup_form"
+       size = "40"
+       placeholder = "Xác nhận mật khẩu"
+       required
+      />
+    </form>
+    <br/>
+    <p class = "top">
+      <button type = "button" id = "dangky_button" onclick = "window.location.href = 'login.html'">Đăng ký</button>
+    </p>
+    </div>
+  </body>
+</html>
