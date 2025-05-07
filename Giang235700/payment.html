@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thanh toán</title>
+    <link rel="stylesheet" href="Payment.css" />
+
+</head>
+
+<body>
+    <div class="header">
+        <button class="return" onclick="window.location.href= 'cart.html'">Quay lại giỏ hàng</button>
+    </div>
+    <div id="list">
+        <h3>Sản phẩm đã chọn mua</h3>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/OIP.Ry-oE2zTJkebwvLR-MrHUgHaJQ?w=202&h=253&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                    alt="Sản phẩm 1" />
+                <div class="product-info">
+                    <h4>Quần áo nam</h4>
+                    <p>Thời trang hè 2025</p>
+                    <span class="product-price">Giá: 120.000₫</span>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/OIP.Ry-oE2zTJkebwvLR-MrHUgHaJQ?w=202&h=253&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                    alt="Sản phẩm 2" />
+                <div class="product-info">
+                    <h4>Quần áo nữ</h4>
+                    <p>Thời trang hè 2025</p>
+                    <span class="product-price">Giá: 120.000₫</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h3>Vui lòng chọn 1 phương thức thanh toán</h3>
+    <div class="select1">
+        <button id="select1" onclick="window.location.href='thank.html'">
+            <h3> Thanh toán khi nhận hàng </h3>
+        </button>
+    </div>
+    <div class="select2">
+        <button id="select2">
+            <h3> Thanh toán bằng chuyển khoản ngân hàng</h3>
+        </button>
+    </div>
+    <div id="image-popup" class="popup-overlay">
+        <div class="popup-content">
+            <img src="qr.jpg" alt="QR Code" class="popup-image" />
+            <button id="finish" onclick="window.location.href='thank.html'">Đã hoàn thành thanh toán</button>
+        </div>
+    </div>
+    
+    <script src="payment.js"></script>
+</body>
