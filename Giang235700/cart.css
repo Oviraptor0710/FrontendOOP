@@ -1,140 +1,291 @@
-  button {
-    cursor: pointer;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+body {
+  font-family: 'Arial'; /* Giữ Poppins như yêu cầu trước */
+  background-image: linear-gradient(-90deg, #333, #ccc); /* Màu nền gốc */
+  /* color: #333;  Màu chữ mặc định của body có thể để trình duyệt tự xử lý hoặc theo style gốc */
+  line-height: 1.6;
+}
 
-  .header {
+button {
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px;
-  }
-
-  .cart-info h5 {
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-  }
-
-  /* Khối nút Trang chủ */
-  .home-button button {
-    padding: 8px 16px;
-    font-size: 16px;
-    font-weight: 600;
-    background-color: white;
-    border: 2px solid gray;
-    border-radius: 8px;
-    width: 120px;
-  }
-
-  .cart-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .icon {
-    width: 60px;
-    height: 40px;
-  }
-
-  #list h3 {
-    margin-inline-start: 30px;
-    font-family: 'Poppins', sans-serif;
-  }
-
-  .product-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px 30px;
-  }
-
-  .product-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: 1px solid #555454;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #fefefe;
-  }
-
-  .product-check {
-    margin-right: 15px;
-    width: 20px;
-    height: 20px;
-  }
-
-  .product-item img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-right: 15px;
-    border-radius: 8px;
-  }
-
-  .product-info h4 {
-    margin: 10px;
-    font-size: 18px;
-    font-weight: 600;
-  }
-
-  .product-info p {
-    margin: 5px 0 0;
-    color: #555;
-    font-size: 14px;
-  }
-
-  .list {
-    text-align: center;
-  }
-
-  .total-section {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 30px;
-    border-top: 2px solid #cbc8c8;
-    font-size: 20px;
-    font-weight: 600;
-    text-align: right;
-    background-color: #f8f8f8;
-  }
-
-  #total-price {
-    margin: 0;
-    color: #e53935;
-  }
-
-  #payment {
-    margin: auto;
-    margin-right: 0px;
-  }
-
-  #payment button {
-    background-color: rgb(237, 61, 61);
-    border-radius: 8px;
-    border: 2px solid white;
-  }
-
-  #payment h1 {
-    text-align: center;
-    color: rgb(255, 255, 255);
-    font-size: 16px;
-    font-weight: 600;
-  }
-
-  .remove {
-    margin-left: 10px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: rgb(237, 61, 61);
+    justify-content: center;
+    background: #000000;
+    padding: 10px 20px;
     color: white;
-    margin: auto;
-    margin-right: 0px;
   }
+  .logo img{
+    width: 200px;
+    height: auto;
+   
+  }
+  .search{
+    margin-left: 50px;
+    margin-top: 10px;
+    width: 600px;
+    height: 50px;
+    display: flex;
+  }
+  #tim_kiem{
+    height: 40px;
+    width: 500px;
+  }
+  #search_button{
+    height: 40px;
+    width: 40px;
+  }
+  .extra{
+    display: flex;
+  }
+  
+  .hotline{
+    justify-content: center;
+    padding-top: 5px;
+  }
+
+  #cart_button{
+    height: 40px;
+    width: 40px;
+    margin-left: 40px;
+  }
+  .log_out button{
+    width: 80px;
+    height: 40px;
+    background-color:#FFA500;
+    margin-left: 50px;
+    border-radius: 6px;
+    border: #FFA500;
+  }
+
+  .content{
+    display: flex;
+    width: 100%;
+  }
+
+
+/* Cart Container */
+.cart-container {
+  max-width: 900px;
+  margin: 30px auto;
+  background-color: #ffffff; /* Nền trắng cho container chính */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+}
+
+.cart-container h2 {
+  text-align: center;
+  margin: 20px 0; /* Giữ margin gốc */
+  font-size: 24px;
+  font-weight: 600;
+  /* color: #FFA500;  Bỏ màu cam cho H2 để giữ màu mặc định */
+}
+
+#product-list-container { /* Tên mới cho div#list */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Khoảng cách gốc giữa các product-item */
+  /* padding: 20px 30px;  Padding này sẽ do cart-container quản lý */
+  max-height: calc(100vh - 350px); /* Giới hạn chiều cao để có scroll, điều chỉnh nếu cần */
+  overflow-y: auto;
+  overflow-x: hidden; /* Tránh scroll ngang không cần thiết */
+  /* border: 1px solid #ccc;  Border gốc của #list, có thể giữ hoặc bỏ */
+  padding-right: 10px; /* Không gian cho thanh cuộn nếu hiện */
+}
+
+/* Custom scrollbar (optional) */
+#product-list-container::-webkit-scrollbar {
+  width: 8px;
+}
+#product-list-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+#product-list-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+#product-list-container::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+
+.product-item {
+  display: flex;
+  flex-direction: row; /* Giữ hướng gốc */
+  align-items: center;
+  gap: 15px; /* Giữ khoảng cách giữa các thành phần con */
+  padding: 10px; /* Padding gốc */
+  border: 1px solid #555454; /* Border gốc */
+  border-radius: 10px; /* Bo tròn gốc */
+  background-color: #fefefe; /* Màu nền product-item gốc */
+  transition: box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.product-check {
+  margin-right: 15px; /* Margin gốc */
+  width: 20px;
+  height: 20px;
+  /* accent-color: #FFA500; Bỏ accent-color để giữ màu checkbox mặc định hoặc theo trình duyệt */
+  cursor: pointer;
+}
+
+.product-item img {
+  width: 100px; /* Kích thước ảnh gốc */
+  height: 100px;
+  object-fit: cover;
+  margin-right: 15px; /* Margin gốc */
+  border-radius: 8px; /* Bo tròn ảnh gốc */
+  /* border: 1px solid #eee; */ /* Bỏ border thêm này */
+}
+
+.product-details { /* Tên mới cho .product-info */
+  flex-grow: 1;
+}
+
+.product-details h4 {
+  margin: 0 0 5px 0; /* Điều chỉnh margin, gốc là 10px */
+  font-size: 18px; /* Font-size gốc */
+  font-weight: 600; /* Font-weight gốc */
+  /* color: #333; */ /* Để màu mặc định */
+}
+
+.product-price { /* class gốc là span.product-price */
+  /* margin: 5px 0 0; */ /* CSS gốc không có margin riêng cho price */
+  /* color: #555; */ /* Màu gốc của <p> trong .product-info, giờ span nên có thể không cần */
+  font-size: 16px; /* Điều chỉnh nếu cần, gốc là 14px cho p */
+  font-weight: 500;
+  /* color: #e74c3c; Bỏ màu đỏ nổi bật này */
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Gap gốc */
+  margin-left: auto; /* Đẩy sang phải */
+  margin-right: 10px; /* Khoảng cách với nút xóa */
+}
+
+.quantity-controls button {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #ddd; /* Màu nút +/- gốc */
+  /* color: #555; Bỏ màu chữ này */
+  border: none; /* Border gốc */
+  border-radius: 4px; /* Bo tròn gốc */
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.quantity-controls button:hover {
+  background-color: #ccc; /* Hiệu ứng hover đơn giản */
+}
+.quantity-controls button:active {
+  background-color: #bbb;
+}
+
+
+.quantity-input {
+  width: 40px; /* Chiều rộng gốc */
+  height: 30px;
+  text-align: center;
+  font-size: 16px; /* Font-size gốc */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -moz-appearance: textfield;
+}
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.remove-product { /* Tên mới cho .remove */
+  padding: 8px 12px; /* Padding từ .remove gốc (phiên bản 2) */
+  border: none;
+  border-radius: 6px; /* Bo tròn từ .remove gốc (phiên bản 2) */
+  transition: background-color 0.3s;
+  margin-left: auto; /* Đã có trong .quantity-controls, nếu remove đứng riêng thì cần */
+  /* margin: auto; margin-right: 0px;  Lấy từ .remove gốc (phiên bản 1) */
+  /* Nếu muốn giữ style cuối cùng của .remove trong CSS gốc: */
+  background-color: #090202; /* Màu nền .remove gốc (phiên bản 2) */
+  color: #FFA500; /* Màu chữ .remove gốc (phiên bản 2) */
+  font-size: 16px; /* Giữ kích thước icon dễ nhìn */
+  width: auto; /* Cho phép nút co giãn theo nội dung (icon) */
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-product:hover {
+  background-color: #222; /* Hiệu ứng hover nhẹ cho nền đen */
+  color: #ffc107; /* Sáng hơn một chút */
+}
+
+.remove-product i {
+  pointer-events: none;
+}
+
+.total-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px; /* Gốc là 20px 30px, nhưng container đã có padding */
+  border-top: 2px solid #cbc8c8; /* Border top gốc */
+  font-size: 20px; /* Font-size gốc */
+  font-weight: 600; /* Font-weight gốc */
+  /* text-align: right;  Không cần nữa vì dùng flex */
+  background-color: #f8f8f8; /* Màu nền total-section gốc */
+  margin-top: 20px;
+}
+
+.total-summary h4 {
+  font-size: inherit; /* Kế thừa từ .total-section */
+  font-weight: inherit;
+  margin-bottom: 5px;
+}
+
+#total-price {
+  margin: 0;
+  color: #FFA500; /* Màu total-price gốc */
+  font-weight: 700;
+}
+
+#selected-items-count {
+    font-size: 14px;
+    color: #555; /* Màu cho số lượng sản phẩm */
+}
+
+#payment-button { /* Tên mới cho #payment button */
+  background-color: #FFA500; /* Màu nền nút payment gốc */
+  color: rgb(255, 255, 255); /* Màu chữ nút payment gốc từ h1 bên trong */
+  border: 2px solid white; /* Border nút payment gốc */
+  border-radius: 8px; /* Bo tròn nút payment gốc */
+  padding: 10px 25px; /* Điều chỉnh padding cho phù hợp */
+  font-size: 16px; /* Font-size gốc của h1 */
+  font-weight: 600; /* Font-weight gốc của h1 */
+  text-align: center;
+  transition: background-color 0.3s ease;
+  /* Loại bỏ H1 bên trong button, style trực tiếp button */
+}
+
+#payment-button:hover {
+  background-color: #e69500; /* Sáng hơn một chút khi hover */
+}

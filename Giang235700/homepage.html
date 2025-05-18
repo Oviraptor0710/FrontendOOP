@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang Chủ Bán Điện Thoại</title>
+  <link rel="stylesheet" href="css_test/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="homepage.css" />
+</head>
+<body>
+    <header class=" top">
+        <div class = "logo">
+            <img src="" alt="logo">
+        </div>
+        <div class = "danhmuc">
+            <button>Danh mục</button>
+        </div>
+        <div class="">
+            <button>Xem giá tại</button>
+        </div>
+        <div class="search-container">
+            <form action="/search" method="get">
+              <input type="text" name="query" class="search-box" placeholder="Tìm kiếm...">
+              <button type="submit" class="search-button">Tìm</button>
+            </form>
+        </div>
+        <div class=" phone">
+            <button>Gọi mua hàng<br>trực tiếp</button>
+        </div>
+        <div class="cart">
+            <button onclick="window.location.href='cart.html'">Giỏ hàng</button>
+        </div>
+        <div class=" login">
+            <button onclick="window.location.href='login_page.html'">Đăng nhập</button>
+        </div>
+    </header>
+    <div id="list">
+        <div class="product-list">
+            <div class="product-item">
+                <img src="iphone-16-pro-max.webp" alt="iphone-16-pro-max">
+                <div class="product-info">
+                    <h4>iphone-16-pro-max</h4>
+                    <span class="product-price">Giá: 40.000.000₫</span>
+                    <button id="add">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <img src = "https://cdn2.cellphones.com.vn/x/media/catalog/product/d/i/dien-thoai-xiaomi-redmi-note-14.png" alt = "dien-thoai-samsung-galaxy-s25-ultra_3__3">
+                <div class="product-info">
+                    <h4>Samsung Galaxy S25 Ultra</h4>
+                    <span class="product-price">Giá: 28.990.000₫</span>
+                    <button id = "add">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src = "dien-thoai-samsung-galaxy-s25-ultra_3__3 (1).webp" alt = "dien-thoai-samsung-galaxy-s25-ultra_3__3">
+                <div class="product-info">
+                    <h4>Samsung Galaxy S25 Ultra</h4>
+                    <span class="product-price">Giá: 28.990.000₫</span>
+                    <button id = "add">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>

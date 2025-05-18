@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang Chủ Bán Điện Thoại</title>
+  <link rel="stylesheet" href="css_test/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+        <img src="imgs_folder/Logo.png" alt="Logo">
+    </div>
+
+    <div class = "search">
+     <form>
+        <input
+            placeholder = "Tìm kiếm sản phẩm"
+            id = "tim_kiem"
+            size = "80"
+        >
+     </form>
+     <button id = "search_button" class="fa-solid fa-magnifying-glass"></button>
+    </div>
+
+    <div class = "extra">
+        <span class="hotline">Hotline:<br> 0834784586</span>
+        <button type="button" id = "cart_button" class="fa-solid fa-cart-plus" onclick="window.location.href='cart.html'"></button>
+        <button type="submit" class="log_out">Đăng xuất</button>
+        
+    </div>    
+  </header>
+ 
+  <nav id="brand_list">
+      <ul>
+          <li id="ten_hang">Hãng</li>
+
+          <li>
+              
+                  <button type="submit">Apple</button>
+              
+          </li>
+
+          <li><button type="submit">Samsung</button></li>
+
+          <li><button type="submit">Xiaomi</button></li>
+
+          <li><button type="submit">Nokia</button></li>
+          <li><button type="submit">Huawei</button></li>
+
+          <li><button type="submit">Vivo</button></li>
+
+          <li><button type="submit">Oppo</button>   
+          </li>
+          <li><button type="submit">Asus</button></li>
+
+          <li><button type="submit">Lenovo</button></li>
+          <li><button type="submit">Vertu</button></li>
+      </ul>
+  </nav>
+
+  <div class = "content">
+  <nav id = "price_list">
+    <ul>
+      <li id = "muc_gia">Mức giá</li>
+      <li><button type = "submit">Từ 3-5 triệu</button></li>
+      <li><button type = "submit">Từ 5-8 triệu</button></li>
+      <li><button type = "submit">Từ 8-11 triệu</button></li>
+      <li><button type = "submit">Từ 11-15 triệu</button></li>
+      <li><button type = "submit">Từ 15-20 triệu</button></li>
+      <li><button type = "submit">Trên 20 triệu</button></li>
+    </ul>
+  </nav>  
+  
+  </div>
+</body>
+</html>

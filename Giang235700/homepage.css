@@ -1,0 +1,57 @@
+button {
+    cursor: pointer;
+}
+
+body {
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.search-box {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+}
+
+.search-button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #e4715d;
+    color: white;
+    border-radius: 20px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+/* Căn các sản phẩm nằm cạnh nhau */
+.product-list {
+    display: flex;
+    justify-content: center; /* căn giữa toàn bộ danh sách */
+    flex-wrap: wrap;         /* tự động xuống dòng nếu không đủ chỗ */
+    gap: 20px;               /* khoảng cách giữa các sản phẩm */
+    padding: 20px;
+}
+
+/* Mỗi sản phẩm */
+.product-item {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}

@@ -1,61 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thanh toán</title>
-    <link rel="stylesheet" href="Payment.css" />
-
+    <link rel="stylesheet" href="payment.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
-    <div class="header">
-        <button class="return" onclick="window.location.href= 'cart.html'">Quay lại giỏ hàng</button>
+    <header class="header">
+        <div class="logo">
+            <a th:href="@{/back-to-home}">
+                <img th:src="@{/css/imgs_oop/Logo.png}" alt="Logo" />
+            </a>
+        </div>
+
+    <div class = "search">
+     <form th:action="@{/search}" method="get">
+        <input
+            placeholder = "Tìm kiếm sản phẩm"
+            name = "keyword"
+            id = "tim_kiem"
+            size = "80"
+        >
+         <button type="submit" id="search_button" class="fa-solid fa-magnifying-glass"></button>
+     </form>
     </div>
-    <div id="list">
-        <h3>Sản phẩm đã chọn mua</h3>
-        <div class="product-list">
-            <div class="product-item">
-                <img src="https://th.bing.com/th/id/OIP.Ry-oE2zTJkebwvLR-MrHUgHaJQ?w=202&h=253&c=7&r=0&o=5&dpr=1.5&pid=1.7"
-                    alt="Sản phẩm 1" />
-                <div class="product-info">
-                    <h4>Quần áo nam</h4>
-                    <p>Thời trang hè 2025</p>
-                    <span class="product-price">Giá: 120.000₫</span>
+
+    <div class = "extra">
+        <span class="hotline">Hotline:<br> 0834784586</span>
+
+        <div class ="cart_button">
+            <a th:href="@{/cart}">
+                <button type="button" id = "cart_button" class="fa-solid fa-cart-plus"></button>
+            </a>
+        </div>
+        <div class = "log_out">
+            <form th:action="@{/logout}" method="post">
+                <button type="submit">Đăng xuất</button>
+            </form>
+        </div>
+        
+    </div>    
+  </header>
+
+    <div class="underhead">
+        <button class="return" onclick="window.location.href='cart.html'">Quay lại giỏ hàng</button>
+        <button class="paymethod" onclick="window.location.href='paymethod.html'">Tiến Hành Thanh Toán</button>
+    </div>
+
+    <div class="cart-container">
+        <h2>SẢN PHẨM BẠN ĐÃ CHỌN MUA</h2>
+        <div id="product-list-container">
+            <div class="product-item" data-id="1">
+                <img src="img/dien-thoai-samsung-galaxy-s25-ultra_3__3 (1).webp" alt="Samsung Galaxy S25 Ultra" />
+                <div class="product-details">
+                    <h4>Samsung Galaxy S25 Ultra</h4>
+                    <span class="product-price">28.000.000₫</span>
                 </div>
             </div>
 
-            <div class="product-item">
-                <img src="https://th.bing.com/th/id/OIP.Ry-oE2zTJkebwvLR-MrHUgHaJQ?w=202&h=253&c=7&r=0&o=5&dpr=1.5&pid=1.7"
-                    alt="Sản phẩm 2" />
-                <div class="product-info">
-                    <h4>Quần áo nữ</h4>
-                    <p>Thời trang hè 2025</p>
-                    <span class="product-price">Giá: 120.000₫</span>
+            <div class="product-item" data-id="2">
+                <img src="img/iphone-16-pro-max.webp" alt="iPhone 16 Pro Max" />
+                <div class="product-details">
+                    <h4>iPhone 16 Pro Max</h4>
+                    <span class="product-price">38.990.000₫</span>
+                </div>
+            </div>
+
+
+            <div class="product-item" data-id="3">
+                <img src="img/xiaomi_14t_2_.webp" alt="Xiaomi 14T" />
+                <div class="product-details">
+                    <h4>Xiaomi 14T</h4>
+                    <span class="product-price">15.990.000₫</span>
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <h3>Vui lòng chọn 1 phương thức thanh toán</h3>
-    <div class="select1">
-        <button id="select1" onclick="window.location.href='thank.html'">
-            <h3> Thanh toán khi nhận hàng </h3>
-        </button>
-    </div>
-    <div class="select2">
-        <button id="select2">
-            <h3> Thanh toán bằng chuyển khoản ngân hàng</h3>
-        </button>
-    </div>
-    <div id="image-popup" class="popup-overlay">
-        <div class="popup-content">
-            <img src="qr.jpg" alt="QR Code" class="popup-image" />
-            <button id="finish" onclick="window.location.href='thank.html'">Đã hoàn thành thanh toán</button>
+        <div class="total-section">
+            <h4>Tổng cộng: <span id="total-price">0₫</span></h4>
         </div>
     </div>
-    
-    <script src="payment.js"></script>
 </body>
+
+</html>
