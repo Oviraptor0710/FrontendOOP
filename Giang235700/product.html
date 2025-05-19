@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh toán</title>
+    <link rel="stylesheet" href="product.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a th:href="@{/back-to-home}">
+                <img th:src="@{/css/imgs_oop/Logo.png}" alt="Logo" />
+            </a>
+        </div>
+
+        <div class="search">
+            <form th:action="@{/search}" method="get">
+                <input placeholder="Tìm kiếm sản phẩm" name="keyword" id="tim_kiem" size="80">
+                <button type="submit" id="search_button" class="fa-solid fa-magnifying-glass"></button>
+            </form>
+        </div>
+
+        <div class="extra">
+            <span class="hotline">Hotline:<br> 0834784586</span>
+
+            <div class="cart_button">
+                <a th:href="@{/cart}">
+                    <button type="button" id="cart_button" class="fa-solid fa-cart-plus"></button>
+                </a>
+            </div>
+            <div class="log_out">
+                <form th:action="@{/logout}" method="post">
+                    <button type="submit">Đăng xuất</button>
+                </form>
+            </div>
+
+        </div>
+    </header>
+    <h2>Thông tin sản phẩm</h2>
+
+    <div class="product">
+
+        <div class="product-item">
+            <img src="img/iphone-16-pro-max.webp" alt="iPhone 16 Pro Max" />
+        </div>
+
+        <div class="productdetails">
+
+            <div class="product-info">
+                <p><strong>Tên sản phẩm:</strong> <span>iPhone 16 Pro Max 256GB</span></p>
+                <p><strong>Hãng:</strong> <span>Apple</span></p>
+                <p><strong>Giá tiền:</strong> <span>38.990.000₫</span></p>
+            </div>
+
+            <div class="details">
+                <h3>Đặc điểm nổi bật</h3>
+                <ul class="feature-list">
+                    <li>Màn hình Super Retina XDR 6,9 inch lớn hơn có viền mỏng hơn, đem đến cảm giác tuyệt vời khi cầm
+                        trên tay.</li>
+                    <li>Điều khiển Camera - Chỉ cần trượt ngón tay để điều chỉnh camera giúp chụp ảnh hoặc quay video
+                        đẹp hoàn hảo và siêu nhanh.</li>
+                    <li>Thiết kế titan cấp 5 với lớp hoàn thiện mới, tinh tế được xử lý bề mặt vi điểm.</li>
+                    <li>Cài đặt sẵn hệ điều hành iOS 18, giao diện trực quan, dễ sử dụng và nhiều tính năng hữu ích.
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="select">
+        <button class="add">Thêm vào giỏ hàng</button>
+        <button class="buy">Mua Ngay</button>
+    </div>
+</body>
+
+</html>
